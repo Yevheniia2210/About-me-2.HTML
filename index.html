@@ -6,115 +6,199 @@
   <title>Yevheniia Danilova - Curriculum Vitae</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      padding: 20px;
+      color: #f0f0f0;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow-x: hidden;
+    }
+
+    /* 🌌 Мигающие звезды */
+    .stars-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* 🌙 Луна */
+    .moon {
+      width: 120px;
+      height: 120px;
+      background: #f5f3ce;
+      border-radius: 50%;
+      box-shadow: 0 0 30px 10px #fff9b1;
+      position: fixed;
+      top: 60px;
+      right: 80px;
+      z-index: -1;
+    }
+
+    .container {
       max-width: 960px;
       margin: auto;
-      background: #e0f7fa;
-      color: #111;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
     }
+
     h1 {
-      color: #1a237e;
-      font-size: 2.8em;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      color: #fffbe6;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 10px #ccc;
     }
+
     h2 {
-      color: #004d40;
+      color: #a7ffeb;
       font-size: 2em;
       margin-top: 40px;
+      border-bottom: 2px solid #4dd0e1;
+      padding-bottom: 5px;
     }
+
     h3 {
-      color: #006064;
+      color: #80deea;
       font-size: 1.5em;
       margin-top: 25px;
     }
+
     ul, p {
       margin-bottom: 10px;
     }
+
     ul {
       list-style-type: disc;
       margin-left: 20px;
     }
+
     .button-bar {
-      margin: 20px 0 30px;
+      text-align: center;
+      margin: 30px 0;
     }
+
     .btn {
       display: inline-block;
       background-color: #1a73e8;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
-      border-radius: 5px;
-      margin-right: 10px;
-      transition: background-color 0.3s;
+      border-radius: 8px;
+      margin: 10px;
+      font-weight: bold;
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(26, 115, 232, 0.6);
     }
+
     .btn:hover {
       background-color: #0c47a1;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(26, 115, 232, 0.8);
     }
   </style>
 </head>
 <body>
 
-  <h1>Yevheniia Danilova</h1>
+  <!-- Мигающие звезды -->
+  <div class="stars-container" id="stars"></div>
 
-  <div class="button-bar">
-    <a href="Page-2.html" class="btn">Photo</a>
-    <a href="Page-1.html" class="btn">Contacts</a>
+  <!-- Луна -->
+  <div class="moon"></div>
+
+  <div class="container">
+    <h1>Yevheniia Danilova</h1>
+
+    <div class="button-bar">
+      <a href="Page-2.html" class="btn">📷 Photo</a>
+      <a href="Page-1.html" class="btn">📬 Contacts</a>
+    </div>
+
+    <h2>EDUCATION</h2>
+    <ul>
+      <li>2024–2025 – Software Development QQI Level 5 – Limerick College of Further Education, Mulgrave Street, Limerick, Ireland</li>
+      <li>2023–2024 – IT + English QQI Level 4 – Limerick College of Further Education, Limerick, Ireland</li>
+      <li>2010–2013 – Journalism – Institute of Journalism, Film, and Television of Kyiv</li>
+      <li>2006–2010 – History – Kyiv Slavic University</li>
+    </ul>
+
+    <h2>SKILLS AND QUALITIES</h2>
+
+    <h3>IT Skills</h3>
+    <ul>
+      <li>Programming in Python, C#, and Java</li>
+      <li>Automatic and manual testing</li>
+      <li>Advanced internet usage</li>
+      <li>Formatting and publishing articles via admin panels</li>
+    </ul>
+
+    <h3>Languages</h3>
+    <ul>
+      <li>Fluent in Ukrainian and Russian</li>
+      <li>Intermediate English (currently improving)</li>
+    </ul>
+
+    <h3>Professional Qualities</h3>
+    <ul>
+      <li>Reliable</li>
+      <li>Energetic</li>
+      <li>Strong communicator</li>
+      <li>Flexible</li>
+      <li>Highly motivated</li>
+    </ul>
+
+    <h2>WORK EXPERIENCE</h2>
+
+    <h3>2021–2022 – Publishing Editor – Apostrophe-TV</h3>
+    <p>Writing, editing, publishing, working with layout, photo, and video content via the admin system.</p>
+
+    <h3>2020–2021 – Publishing Editor – Greenpost.ua</h3>
+    <p>Writing, editing, publishing, working with layout, photo, and video content via the admin system.</p>
+
+    <h3>2017–2019 – Journalist and Editor – NTN TV – Svidok Agents</h3>
+    <p>Writing and editing content, conducting interviews, finding heroes, experts and shooting locations.</p>
+
+    <h3>2015–2017 – Journalist – STB TV – Za Zhyve</h3>
+    <p>Writing scripts and articles for TV shows, interviews, fieldwork, finding heroes and experts.</p>
+
+    <h3>2014–2015 – Editor – Komsomolska Pravda – Zdorov’ya</h3>
+    <p>Writing, editing, finding experts and doctors, arranging photo shoots and working with layout.</p>
+
+    <h3>2011–2014 – Copywriter – Aweb</h3>
+    <p>Writing SEO-optimized texts for various topics, rewriting, working with keywords and meta tags.</p>
   </div>
 
-  <h2>EDUCATION</h2>
-  <ul>
-    <li>2024–2025 – Software Development QQI Level 5 – Limerick College of Further Education, Mulgrave Street, Limerick, Ireland</li>
-    <li>2023–2024 – IT + English QQI Level 4 – Limerick College of Further Education, Limerick, Ireland</li>
-    <li>2010–2013 – Journalism – Institute of Journalism, Film, and Television of Kyiv</li>
-    <li>2006–2010 – History – Kyiv Slavic University</li>
-  </ul>
-
-  <h2>SKILLS AND QUALITIES</h2>
-
-  <h3>IT Skills</h3>
-  <ul>
-    <li>Programming in Python, C#, and Java</li>
-    <li>Automatic and manual testing</li>
-    <li>Advanced internet usage</li>
-    <li>Formatting and publishing articles via admin panels</li>
-  </ul>
-
-  <h3>Languages</h3>
-  <ul>
-    <li>Fluent in Ukrainian and Russian</li>
-    <li>Intermediate English (currently improving)</li>
-  </ul>
-
-  <h3>Professional Qualities</h3>
-  <ul>
-    <li>Reliable</li>
-    <li>Energetic</li>
-    <li>Strong communicator</li>
-    <li>Flexible</li>
-    <li>Highly motivated</li>
-  </ul>
-
-  <h2>WORK EXPERIENCE</h2>
-  <h3>2021–2022 – Publishing Editor – Apostrophe-TV</h3>
-  <p>Writing, editing, publishing, working with layout, photo, and video content via the admin system.</p>
-
-  <h3>2020–2021 – Publishing Editor – Greenpost.ua</h3>
-  <p>Writing, editing, publishing, working with layout, photo, and video content via the admin system.</p>
-
-  <h3>2017–2019 – Journalist and Editor – NTN TV – Svidok Agents</h3>
-  <p>Writing and editing content, conducting interviews, finding heroes, experts and shooting locations.</p>
-
-  <h3>2015–2017 – Journalist – STB TV – Za Zhyve</h3>
-  <p>Writing scripts and articles for TV shows, interviews, fieldwork, finding heroes and experts.</p>
-
-  <h3>2014–2015 – Editor – Komsomolska Pravda – Zdorov’ya</h3>
-  <p>Writing, editing, finding experts and doctors, arranging photo shoots and working with layout.</p>
-
-  <h3>2011–2014 – Copywriter – Aweb</h3>
-  <p>Writing SEO-optimized texts for various topics, rewriting, working with keywords and meta tags.</p>
+  <!-- Генерация звёзд с JavaScript -->
+  <script>
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${2 + Math.random() * 3}s`;
+      starsContainer.appendChild(star);
+    }
+  </script>
 
 </body>
 </html>

@@ -1,45 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - Yevheniia Danilova</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #e0f7fa;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px;
-      color: #111;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: #f0f0f0;
+      overflow-x: hidden;
     }
+
+    .stars-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* 🌙 Растущий месяц */
+    .crescent {
+      position: fixed;
+      top: 50px;
+      right: 70px;
+      width: 100px;
+      height: 100px;
+      background: #f5f3ce;
+      border-radius: 50%;
+      box-shadow: 0 0 25px 5px #fff9b1;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .crescent::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 25px;
+      width: 100px;
+      height: 100px;
+      background: #090a0f;
+      border-radius: 50%;
+    }
+
+    .container {
+      width: 680px;
+      margin: 120px auto 40px 80px; /* сдвиг влево */
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    }
+
     h1 {
-      color: #1a237e;
       font-size: 2.5em;
-      border-bottom: 2px solid #ccc;
+      color: #fffbe6;
+      border-bottom: 2px solid #4dd0e1;
       padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px #ccc;
     }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
     .btn {
       display: inline-block;
       background-color: #1a73e8;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-top: 20px;
+      font-weight: bold;
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(26, 115, 232, 0.6);
     }
+
     .btn:hover {
       background-color: #0c47a1;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(26, 115, 232, 0.8);
     }
   </style>
 </head>
 <body>
-  <h1>Contact Information</h1>
-  <p><strong>Email:</strong> Foxyluko22@gmail.com</p>
-  <p><strong>Phone:</strong> 0879342297</p>
-  <p><strong>Address:</strong> Mount Kenneth Place, Limerick, Ireland</p>
 
-  <a href="index.html" class="btn">Back to About Me</a>
+  <!-- Звёзды -->
+  <div class="stars-container" id="stars"></div>
+
+  <!-- Растущий месяц -->
+  <div class="crescent"></div>
+
+  <div class="container">
+    <h1>Contact Information</h1>
+    <p><strong>Email:</strong> Foxyluko22@gmail.com</p>
+    <p><strong>Phone:</strong> 0879342297</p>
+    <p><strong>Address:</strong> Mount Kenneth Place, Limerick, Ireland</p>
+
+    <a href="index.html" class="btn">⬅ Back to About Me</a>
+  </div>
+
+  <!-- Генерация мигающих звёзд -->
+  <script>
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${2 + Math.random() * 3}s`;
+      starsContainer.appendChild(star);
+    }
+  </script>
+
 </body>
 </html>
-
